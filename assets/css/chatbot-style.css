@@ -12,3 +12,16 @@
 .lcc-chat-body::-webkit-scrollbar-thumb:hover {
     background: #aaa;
 }
+
+/* Style untuk bubble chat baru */
+.lcc-chat-bubble {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+.lcc-chat-bubble.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+}
