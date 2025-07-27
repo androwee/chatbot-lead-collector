@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
     const chatWindow = $('#lcc-chat-window');
+    const chatToggle = $('#lcc-chat-toggle');
     const chatBody = $('.lcc-chat-body');
     const optionsContainer = $('#lcc-options-container');
     const leadForm = $('#lcc-lead-form');
@@ -13,10 +14,13 @@ jQuery(document).ready(function($) {
     function toggleChat(open) {
         if (open) {
             if (chatWindow.is(':visible')) return;
+            chatToggle.addClass('hidden');
             chatWindow.fadeIn();
             if (chatBody.children().length === 0) renderStep('start');
         } else {
-            chatWindow.fadeOut();
+            chatWindow.fadeOut(() => {
+                chatToggle.removeClass('hidden');
+            });
         }
     }
     
